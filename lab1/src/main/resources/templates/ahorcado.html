@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Setup del Juego</title>
+</head>
+<body>
+<h1>Configura tu Juego de Ahorcado</h1>
+<form action="/conf/start" th:object="${config}" method="post">
+    <label for="longitud">Longitud de la palabra:</label>
+    <input type="number" id="longitud" th:field="*{longitud}" required>
+    <br>
+    <label for="intentos">Número máximo de intentos:</label>
+    <input type="number" id="intentos" th:field="*{intentos}" required>
+    <br>
+    <label for="tema">Tema:</label>
+    <select id="tema" th:field="*{tema}" required>
+        <option value="Animales">Animales</option>
+        <option value="Frutas">Frutas</option>
+        <option value="Países">Países</option>
+    </select>
+    <br>
+    <button type="submit">Comenzar Juego</button>
+</form>
+<p th:if="${error}" th:text="${error}"></p>
+</body>
+</html>
