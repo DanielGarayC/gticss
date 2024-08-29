@@ -1,0 +1,4 @@
+git checkout -b rama : crea la rama y me ubica ahi
+git push origin rama: pusheas en esa rama
+git checkout: te mueves a esa rama
+git merge rama: pusheas toda la rama a la rama en la que te encuentras y haces git push origin ramaActual
