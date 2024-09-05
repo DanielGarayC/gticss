@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Auto</title>
+</head>
+<body>
+<h1>Agregar nuevo auto</h1>
+<form th:action="@{/formAuto/registro}" th:object="${auto}" method="post">
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" th:field="*{modelo}" required><br><br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" th:field="*{color}" required><br><br>
+
+    <label for="kilometraje">Kilometraje:</label>
+    <input type="number" id="kilometraje" th:field="*{kilometraje}" required><br><br>
+
+    <label for="idSede">ID Sede:</label>
+    <input type="number" id="idSede" th:field="*{idSede}" required><br><br>
+
+    <label for="costoPorDia">Costo por día:</label>
+    <input type="number" id="costoPorDia" th:field="*{costoPorDia}" ><br><br>
+
+    <input type="submit" value="Guardar">
+</form>
+
+
+</body>
+</html>

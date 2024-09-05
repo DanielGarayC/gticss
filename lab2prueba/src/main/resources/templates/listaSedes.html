@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Sedes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de Sedes</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Distrito</th>
+        <th>Dirección</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sede, vEstado : ${listaSedes}">
+        <td th:text="${vEstado.index + 1}"></td>
+        <td th:text="${sede.idSede}"></td>
+        <td th:text="${sede.distrito}"></td>
+        <td th:text="${sede.direccion}"></td>
+        <td> <a href="/editarSede/{id}(id=${sede.id})">Editar</a></td>
+        <td> <a href="/borrarSede/{id}(id=${sede.id})">Borrar</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/formSede">Agregar Elemento</a>
+</body>
+</html>

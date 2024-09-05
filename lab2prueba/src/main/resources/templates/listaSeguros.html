@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Seguros</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de Seguros</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Empresa aseguradora</th>
+        <th>Cobertura máxima</th>
+        <th>Tarifa</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="seguro, vEstado : ${listaSeguros}">
+        <td th:text="${vEstado.index + 1}"></td>
+        <td th:text="${seguro.empresa_asegur}"></td>
+        <td th:text="${seguro.cobertura_max}"></td>
+        <td th:text="${seguro.tarifa}"></td>
+        <td> <a href="/editarSeguro">Editar</a></td>
+        <td> <a href="/borrarSeguro">Borrar</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/formSeguro">Agregar Elemento</a>
+</body>
+</html>

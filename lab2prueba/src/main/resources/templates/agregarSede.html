@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Sede</title>
+</head>
+<body>
+<h1>Agregar nueva sede</h1>
+<form th:action="@{/formSede/registro}" th:object="${sede}" method="post">
+    <label for="idSede">ID:</label>
+    <input type="text" id="idSede" th:field="*{idSede}" required><br><br>
+
+    <label for="distrito">Distrito:</label>
+    <input type="text" id="distrito" th:field="*{distrito}" required><br><br>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" th:field="*{direccion}" required><br><br>
+
+    <input type="submit" value="Guardar">
+</form>
+
+
+</body>
+</html>

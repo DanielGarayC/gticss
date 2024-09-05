@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Sede</title>
+</head>
+<body>
+<h1>Editar sede</h1>
+<form th:action="@{/editarSede/{id}(id=${sede.id})}" th:object="${sede}" method="post">
+
+    <label for="distrito">Distrito:</label>
+    <input type="text" id="distrito" th:field="*{distrito}" required><br><br>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" th:field="*{direccion}" required><br><br>
+
+    <input type="submit" value="Actualizar">
+</form>
+
+</body>
+</html>

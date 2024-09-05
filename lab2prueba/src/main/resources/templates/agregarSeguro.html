@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Seguro</title>
+</head>
+<body>
+<h1>Agregar nuevo seguro</h1>
+<form th:action="@{/formSeguro/registro}" th:object="${seguro}" method="post">
+    <label for="empresa_asegur">Empresa aseguradora:</label>
+    <input type="text" id="empresa_asegur" th:field="*{empresa_asegur}" required><br><br>
+
+    <label for="cobertura_max">Cobertura máxima:</label>
+    <input type="text" id="cobertura_max" th:field="*{cobertura_max}" required><br><br>
+
+    <label for="tarifa">Tarifa:</label>
+    <input type="text" id="tarifa" th:field="*{tarifa}" required><br><br>
+    <input type="submit" value="Guardar">
+</form>
+
+
+</body>
+</html>
